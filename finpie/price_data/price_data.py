@@ -43,9 +43,13 @@ from selenium.webdriver.support import expected_conditions as EC
 # from iexfinance.stocks import get_historical_intraday
 from finpie.base import DataBase
 #from base import DataBase
+import random
 
-
-
+# function that read a random line from the file the user_agents
+def rand_agent(fname):
+    lines = open(fname).read().splitlines()
+    return random.choice(lines)
+    
 def historical_prices( ticker, start = None, end = None):
     '''
 
